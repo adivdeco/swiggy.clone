@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./Components/Header";
-import FoodOption from "./Components/FoodOption";
-import GroceryOption from "./Components/GroceryOption";
-import RestroOption from "./Components/RestroOption";
+import Home from "./Components/Home";
 import Restrudents from "./Components/Restrudents";
 
-import { BrowserRouter } from "react-router";
-// Header section: Let's build it
+import { BrowserRouter, Route , Router, Routes } from "react-router";
+
 
 function App(){
     
     return(
        <>
-       <Header></Header>
-       <FoodOption></FoodOption>
-       <GroceryOption></GroceryOption>
-        <RestroOption></RestroOption>
-        <Restrudents></Restrudents>
+       <BrowserRouter>
+       <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path="/restaurant" element={<Restrudents></Restrudents>} ></Route>
+       </Routes>
+       </BrowserRouter>
+      
+       
        </>
     )
 }

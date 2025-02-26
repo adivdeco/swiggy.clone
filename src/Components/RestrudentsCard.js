@@ -23,7 +23,7 @@ export default function RestrudentsCard({rest}) {
 
 
     return(
-        <div className=" mb-5">  
+        <div className=" mb-5 transform transition duration-200 ease-in hover:scale-95">  
            <div className="relative rounded-2xl overflow-hidden" >
             <img className="w-70 h-45 object-cover border-none rounded-2xl " src={"https://media-assets.swiggy.com/swiggy/image/upload/"+rest?.info?.cloudinaryImageId} ></img>
             <div className="absolute bg-gradient-to-t from-black to-transparent h-16 bottom-0 rounded-b-2xl left-0 right-0 z-0 "></div>
@@ -43,8 +43,8 @@ export default function RestrudentsCard({rest}) {
 
         </div>
 
-        <p>{truncateTextByWords(rest.info?.cuisines.join(', '), 4)}</p>
-        <p>{rest.info?.areaName}</p>
+        <p className=" text-gray-500 text-lg">{truncateTextByWords(rest.info?.cuisines.join(', '), 4)}</p>
+        <p className=" text-gray-500 text-lg">{rest.info?.areaName}</p>
        </div>
     )
 }

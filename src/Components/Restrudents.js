@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import RestrudentsCard from './RestrudentsCard';
+import Shimmer from './Shimmer';
 
 export default function Restrudents() {
 
@@ -19,12 +20,18 @@ export default function Restrudents() {
 
 
       fetchdata();
-  },[])
+  },[]) 
 
-  console.log(restData);
+    if (restData.length === 0) {
+        return(
+          <div className='flex flex-wrap w-[80%] gap-3.5 mx-auto mt-20 '>
+           <Shimmer></Shimmer>
+           </div>
+   )}
+  
 
     return (
-        <div className="flex flex-wrap w-[80%] gap-3.5 mx-auto  ">
+        <div className="flex flex-wrap w-[80%] gap-3.5 mx-auto mt-20 ">
           {
             restData.map((rest)=><RestrudentsCard key={rest?.info?.id} rest={rest}></RestrudentsCard>)
           }
