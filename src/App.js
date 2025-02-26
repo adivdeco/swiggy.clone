@@ -4,7 +4,9 @@ import Header from "./Components/Header";
 import FoodOption from "./Components/FoodOption";
 import GroceryOption from "./Components/GroceryOption";
 import RestroOption from "./Components/RestroOption";
+import Restrudents from "./Components/Restrudents";
 
+import { BrowserRouter } from "react-router";
 // Header section: Let's build it
 
 function App(){
@@ -15,6 +17,7 @@ function App(){
        <FoodOption></FoodOption>
        <GroceryOption></GroceryOption>
         <RestroOption></RestroOption>
+        <Restrudents></Restrudents>
        </>
     )
 }
