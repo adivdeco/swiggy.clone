@@ -71,7 +71,7 @@ export default function Restrudantmenu(){
     let {id} = useParams();
     console.log(id);
 
-    const [RestData, setRestData] = useState([]);
+    const [RestData, setRestData] = useState(null);
 
     useEffect(()=>{
     
@@ -81,6 +81,8 @@ export default function Restrudantmenu(){
            const swiggyAPI = `https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=${id}`;
            const response = await fetch(proxyServer+swiggyAPI);
            const data = await response.json();
+           console.log(data);
+           
            const tempData = data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
            const filterData = tempData.filter((items)=> 'title' in items?.card?.card)
            setRestData(filterData);
@@ -89,7 +91,7 @@ export default function Restrudantmenu(){
         fetchData();
        },[])
 
-       console.log(RestData);
+    //    console.log(RestData);
 
     return(
         <div className="w-[80%] mx-auto mt-20">
