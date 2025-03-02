@@ -63,7 +63,7 @@
 // // https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=10392
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-// import MenuCard from "./MenuCard"
+import MenuCard from "./MenuCard";
 
 
 export default function Restrudantmenu(){
@@ -71,7 +71,7 @@ export default function Restrudantmenu(){
     let {id} = useParams();
     console.log(id);
 
-    const [RestData, setRestData] = useState(null);
+    const [RestData, setRestData] = useState([]);
 
     useEffect(()=>{
     
@@ -81,7 +81,7 @@ export default function Restrudantmenu(){
            const swiggyAPI = `https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=${id}`;
            const response = await fetch(proxyServer+swiggyAPI);
            const data = await response.json();
-           console.log(data);
+           
            
            const tempData = data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
            const filterData = tempData.filter((items)=> 'title' in items?.card?.card)
@@ -91,14 +91,14 @@ export default function Restrudantmenu(){
         fetchData();
        },[])
 
-    //    console.log(RestData);
+       console.log(RestData);
 
     return(
-        <div className="w-[80%] mx-auto mt-20">
-            <h1>{id}cafe</h1>
-          {/* {
+        <div className="w-[60%] mx-auto mt-20">
+           
+          {
             RestData.map((menuItems)=><MenuCard key={menuItems?.card?.card?.title} menuItems={menuItems?.card?.card}></MenuCard>)
-          } */}
+          }
         </div>
     )
 

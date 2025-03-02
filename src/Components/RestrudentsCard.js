@@ -23,7 +23,7 @@ export default function RestrudentsCard({rest}) {
 
 
     return(
-        <Link to = {"/city/delhi/ "+rest?.info?.id}>
+        <Link to = {"/city/delhi/"+rest?.info?.id}>
         <div className=" mb-5 transform transition duration-200 ease-in hover:scale-95">  
            <div className="relative rounded-2xl overflow-hidden" >
             <img className="w-70 h-45 object-cover border-none rounded-2xl " src={"https://media-assets.swiggy.com/swiggy/image/upload/"+rest?.info?.cloudinaryImageId} ></img>
