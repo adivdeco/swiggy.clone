@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Home from "./Components/Home";
 import Restrudents from "./Components/Restrudents";
 import Restrudantmenu from "./Components/Restrudantmenu";
+import Search from "./Components/Search";
 
 import { BrowserRouter, Route , Routes } from "react-router";
 
@@ -16,6 +17,7 @@ function App(){
         <Route path='/' element={<Home></Home>}></Route>
         <Route path="/restaurant" element={<Restrudents></Restrudents>} ></Route>
         <Route path="/city/delhi/:id" element={<Restrudantmenu></Restrudantmenu>}></Route>
+        <Route path="/city/delhi/:id/search" element={<Search></Search>}></Route>
        </Routes>
        </BrowserRouter>
       

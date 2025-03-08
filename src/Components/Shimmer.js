@@ -24,11 +24,14 @@ import React, { createContext, useContext } from 'react';
 const ShimmerContext = createContext(12);
 
 const ShimmerBlock = () => (
+
+    <div className="animate-pulse">
     <div className="flex flex-col items-center transform transition ease-in-out bg-gradient-to-t from-gray-100 rounded-2xl to-transparent ">
         <div className="w-70 h-45 object-cover border-none rounded-2xl bg-gray-300"></div>
         <div className="w-60 h-4 rounded-2xl bg-gray-200 mt-2"></div>
         <div className="w-30 h-2 rounded-2xl bg-gray-300 mt-2"></div>
         <div className="w-40 h-2 rounded-2xl bg-gray-200 mt-2"></div>
+    </div>
     </div>
 );
 
