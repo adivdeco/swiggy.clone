@@ -6,6 +6,7 @@ import Restrudantmenu from "./Components/Restrudantmenu";
 import Search from "./Components/Search";
 
 import { BrowserRouter, Route , Routes } from "react-router";
+import SecounderyHome from "./Components/SecounderyHome";
 
 
 function App(){
@@ -15,9 +16,11 @@ function App(){
        <BrowserRouter>
        <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route element={<SecounderyHome></SecounderyHome>}>
         <Route path="/restaurant" element={<Restrudents></Restrudents>} ></Route>
         <Route path="/city/delhi/:id" element={<Restrudantmenu></Restrudantmenu>}></Route>
         <Route path="/city/delhi/:id/search" element={<Search></Search>}></Route>
+        </Route>
        </Routes>
        </BrowserRouter>
       
