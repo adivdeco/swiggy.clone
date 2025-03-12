@@ -7,7 +7,7 @@ export default function Search() {
     
     let {id} = useParams();
     
-    const [filterData , setFilteredData] = useState([]);
+    const [fooddata , setfooddata] = useState([]);
     const [text, setText] = useState('');
 
     useEffect(()=>{
@@ -19,7 +19,7 @@ export default function Search() {
             const data = await response.json();
             const refineData = data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
             const filterData = refineData?.filter((items)=> 'title' in items?.card?.card)  
-            setFilteredData(filterData);
+            setfooddata(filterData);
         }
 
         featchdata();
@@ -27,6 +27,7 @@ export default function Search() {
     
     return(
         <>
+        {/* input fild */}
             <div className="w-[60%] mx-auto">
                 <input className=" w-full py-3  px-5 text-lg bg-gray-200 rounded-xl border-none mt-15" 
                 placeholder="Search-Food"  
@@ -38,7 +39,7 @@ export default function Search() {
         <div className="w-[80%]  mx-auto">
 
             {
-                filterData.map((item)=> <Seacrh2 key={item.card.card.title} item2 = {item.card.card} text={text} ></Seacrh2>)
+                fooddata.map((item)=> <Seacrh2 key={item.card.card.title} item2 = {item.card.card} text={text} ></Seacrh2>)
             }
             
         </div>

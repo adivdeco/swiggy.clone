@@ -17,10 +17,12 @@ export default function Search2({item2 , text}){
 
 
 
+
     return(
             <>
+            <input ></input>
             {
-              item2?.itemCards?.map((items)=> <SearchItem key={items.card.info.id} items={items.card.info}></SearchItem>)
+              item2?.itemCards?.map((items)=> <SearchItem key={items.card.info.id} items={[items.card.info]} text={text}></SearchItem>)
             }
             </>
     )

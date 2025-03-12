@@ -46,6 +46,9 @@ export default function Restrudantmenu(){
     return(
       <>
       <div className="w-[60%] mx-auto mt-20 ">
+
+        {/* search link to go on search btn.. */}
+
           <Link to={`/city/delhi/${id}/search`}>
           <p className="w-full text-center py-2 rounded-xl bg-gray-300 text-lg opacity-60">Search for Dishes</p>
           </Link>

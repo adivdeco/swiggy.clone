@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from "react-redux"
 export default function RestInfo({restData}) {
 
     const items = useSelector(state=>state.cartslice.items)
-    const element = items.find(item=>item.id===restData.id)
+    const element = items.find(item=>item.id===restData.id)  // returns value in t/false..
     const count = element? element.quantity : 0
-    // const [count , setcount] = useState(0)  // eska use kr rhe the lakin, jab cart s bhar aate to vo {slested cart}hatt ja rha tha so esko htaa k dusra logic laggana paddi,
+    // const [count , setcount] = useState(0) 
+    //  // eska use kr rhe the lakin, jab cart s bhar aate to vo {slested cart}hatt ja rha tha so esko htaa k dusra logic laggana paddi,
     //  like aaray items[] jo hai {cartslicer} m ,us m ham check kr rhe hai kee wha p hai ,y id ka data ha to quantity btaao n to zero return kro
     // es s data save ho jaa rha hai ,, or shi logic hai.. or vo count m save ho jaata hai ..
     const dispatch = useDispatch();
